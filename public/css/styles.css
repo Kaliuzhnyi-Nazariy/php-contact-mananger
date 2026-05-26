@@ -36,7 +36,8 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 100%;
+  width: 80%;
+  /* width: 100%; */
   /* flex: 1; */
 }
 
@@ -44,7 +45,8 @@ ul {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 80%;
+  /* width: 80%; */
+  width: 100%;
   opacity: 0.5;
   transition: all 150ms;
   margin-top: 20px;
@@ -71,15 +73,16 @@ ul {
   opacity: 1;
 }
 
-.authBtn {
+.btn {
   padding: 8px 32px;
 
   border: 1px solid transparent;
 
-  color: #f8fafc;
-  background-color: var(--primary);
-
   border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: all 250ms;
 }
 
 .body {
