@@ -1,0 +1,15 @@
+{
+    "name": "acer/php-contact-manager",
+    "autoload": {
+        "psr-4": {
+            "Acer\\PhpContactManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kaliuzhnyi-Nazariy",
+            "email": "132183299+Kaliuzhnyi-Nazariy@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
