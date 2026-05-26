@@ -1,0 +1,21 @@
+.authBtn {
+  color: #f8fafc;
+  background-color: var(--primary);
+}
+
+.authBtn:hover,
+.authBtn:focus {
+  color: var(--primary);
+  background-color: #f8fafc;
+  border: 1px solid var(--primary);
+}
+
+.redirect {
+  margin-top: 20px;
+  color: var(--light-text);
+}
+
+.redirect > a {
+  text-decoration: none;
+  color: var(--primary);
+}
