@@ -26,7 +26,7 @@
   padding: 8px 12px;
   width: fit-content;
 
-  border-radius: 8px;
+  /* border-radius: 8px; */
 
   /* margin-top: 20px; */
   margin: 20px auto 0 auto;
@@ -97,11 +97,16 @@
   border-radius: 8px;
 }
 
-.data-block {
+.message {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.data-block {
+  flex: 1;
+  width: 100%;
 }
 
 .buttons {
@@ -110,20 +115,94 @@
   gap: 16px;
 }
 
-.deleteBtn {
+.logoutBtn {
   text-decoration: none;
   background-color: red;
   color: #f8fafc;
   text-transform: uppercase;
 
-  padding: 8px 12px;
   width: fit-content;
-
-  border-radius: 8px;
 
   margin: 20px auto 0 auto;
 
-  border: 1px solid transparent;
   font-family: "Times New Roman", Times, serif;
   font-size: 16px;
+}
+
+@media screen and (min-width: 560px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero > p {
+    font-size: 16px;
+  }
+
+  .name {
+    width: 140px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .name {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .list {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .listItemContent > img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .message {
+    font-size: 18px;
+  }
+
+  .hero > h1 {
+    font-size: 48px;
+  }
+
+  .name {
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .list {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .listItemContent > img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .name {
+    font-size: 24px;
+    width: 260px;
+  }
+
+  .info {
+    font-size: 18px;
+    width: 260px;
+  }
+
+  .deleteBtn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .message {
+    font-size: 20px;
+  }
 }
