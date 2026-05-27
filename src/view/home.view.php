@@ -33,7 +33,7 @@
                         <li class="listItem">
                             <div class="listItemContent">
                                 <?php if (!empty($contact['photo'])): ?>
-    <img                   src="<?= htmlspecialchars($contact['photo']) ?>">
+    <img                   src="<?= htmlspecialchars('/../../public'. $contact['photo']) ?>">
 <?php endif; ?>
                                 <div>
                                     <h3 class="name">Name: <?php echo $contact['name'] ;?></h3>
