@@ -2,7 +2,13 @@
 
 try {
 
-    $dblink = __DIR__ . '/../storage/contact-manager.db';
+    $storage = __DIR__ . '/../storage/contact-manager.db';
+
+    if (!is_dir($storage)) {
+        mkdir($storage,0777, true);
+    }
+
+    $dblink = $storage;
 
     $pdo = new PDO("sqlite:$dblink");
 
