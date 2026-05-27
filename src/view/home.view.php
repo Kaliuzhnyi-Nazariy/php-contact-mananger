@@ -32,7 +32,9 @@
                     <?php foreach ($contacts as $contact) : ?>
                         <li class="listItem">
                             <div class="listItemContent">
-                                <img src="<?php echo $contact['photo'] ?>" alt="">
+                                <?php if (!empty($contact['photo'])): ?>
+    <img                   src="<?= htmlspecialchars($contact['photo']) ?>">
+<?php endif; ?>
                                 <div>
                                     <h3 class="name">Name: <?php echo $contact['name'] ;?></h3>
                                     <p class="info">Email: <?php echo $contact['email'] ;?></p>
