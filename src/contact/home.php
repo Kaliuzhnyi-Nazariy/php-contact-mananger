@@ -1,4 +1,10 @@
 <?php
+
+if (!isset($_SESSION["user_id"])) {
+    header('Location: /signin');
+    exit;
+}
+
 $contacts = [];
 
     $stmt = $pdo->prepare('SELECT * FROM contacts WHERE owner_id = :owner_id');
@@ -15,6 +21,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     session_destroy();
 
-    header('Location: /signin.php');
+    header('Location: /signin');
     exit;
 }
