@@ -40,7 +40,7 @@ $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);    $phone = t
             ':photo' => $photo,
             ':owner_id' => $_SESSION['user_id'],
         ]);
-        header('Location: /home.php');
+        header('Location: /');
         exit;
     }
 }

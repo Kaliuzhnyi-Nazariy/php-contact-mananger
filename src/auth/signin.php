@@ -1,9 +1,12 @@
 <?php 
 
 if (isset($_SESSION['user_id'])) {
-    header('Location: /home.php');
+    header('Location: /');
     exit;
 }
+
+
+/** @var PDO $pdo */
 
 $errors = [];
 
@@ -32,7 +35,7 @@ if(!$user) {
 
     $_SESSION['user_id'] = $user['id'];
 
-    header('Location: /home.php');
+    header('Location: /');
     exit;
 }
 

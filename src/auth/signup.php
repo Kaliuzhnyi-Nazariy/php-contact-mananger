@@ -1,7 +1,10 @@
 <?php
 
+
+/** @var PDO $pdo */
+
 if(isset($_SESSION['user_id'])) {
-    header('Location: /home.php');
+    header('Location: /home');
     exit;
 }
 
@@ -48,7 +51,7 @@ if (!$name) {
             session_regenerate_id(true);
 
             $_SESSION['user_id'] = $userId;
-        header('Location: /home.php');
+        header('Location: /');
         exit;
         } catch (Exception $e) {
     error_log($e->getMessage());

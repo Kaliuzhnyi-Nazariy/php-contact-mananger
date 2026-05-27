@@ -27,7 +27,7 @@ $contact = $stmt -> fetch(PDO::FETCH_ASSOC);
             unlink($contact['photo']);
         }
 
-        header('Location: /home.php');
+        header('Location: /');
         exit;
     }
 }
