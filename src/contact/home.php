@@ -5,6 +5,8 @@ if (!isset($_SESSION["user_id"])) {
     exit;
 }
 
+/** @var PDO $pdo */
+
 $contacts = [];
 
     $stmt = $pdo->prepare('SELECT * FROM contacts WHERE owner_id = :owner_id');

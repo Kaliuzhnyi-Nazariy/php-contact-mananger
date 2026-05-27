@@ -1,4 +1,7 @@
 <?php
+
+/** @var PDO $pdo */
+
 $uploadsFolder = 'uploads/';
 
 $errors = [];
