@@ -28,7 +28,7 @@ $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);    $phone = t
 
             try {
              move_uploaded_file($_FILES['photo']['tmp_name'], $imagePath);
-                 $photo = "/uploads/" . $imageName;
+                 $photo = "/public/uploads/" . $imageName;
              }
              catch (Exception $e) {
                 return null;
