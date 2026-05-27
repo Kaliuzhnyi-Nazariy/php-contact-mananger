@@ -2,7 +2,7 @@
 
 /** @var PDO $pdo */
 
-$uploadsFolder = 'uploads/';
+$uploadsFolder = __DIR__ . '/../../public/uploads/';
 
 $errors = [];
 
