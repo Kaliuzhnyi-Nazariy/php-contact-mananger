@@ -7,13 +7,18 @@ $uploadsFolder = __DIR__ . '/../../public/uploads/';
 require __DIR__ . '/../lib/cloudinary.php';
 // $cloudinary = require __DIR__ . '/../lib/cloudinary.php';
 
+if (!isset($_SESSION["user_id"])) {
+    header('Location: /signin');
+    exit;
+}
+
 $errors = [];
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim(filter_input(INPUT_POST,"name", FILTER_SANITIZE_SPECIAL_CHARS));
 $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);    $phone = trim(filter_input(INPUT_POST,"phone", FILTER_SANITIZE_NUMBER_INT));
 
-    $photo = '';
+    $photo = [];
 
 
 
@@ -40,12 +45,13 @@ $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);    $phone = t
             // }
         }
 
-        $stmt = $pdo->prepare('INSERT INTO contacts (name, email, phone, photo, owner_id) VALUES (:name, :email, :phone, :photo, :owner_id);');
+        $stmt = $pdo->prepare('INSERT INTO contacts (name, email, phone, photo_link, photo_public_id, owner_id) VALUES (:name, :email, :phone, :photo_link, :photo_public_id, :owner_id);');
         $stmt->execute([
             ':name' => $name ?? '',
             ':email' => $email ?? '',
             ':phone' => $phone ?? '',
-            ':photo' => $photo,
+            ':photo_link' => $photo['link'],
+            ':photo_public_id' => $photo['id'],
             ':owner_id' => $_SESSION['user_id'],
         ]);
         header('Location: /');
