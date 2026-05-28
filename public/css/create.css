@@ -27,6 +27,19 @@
   background-color: #f8fafc;
 }
 
+.photo-container {
+  justify-self: center;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
 @media screen and (min-width: 768px) {
   .create-form {
     display: grid;
@@ -46,19 +59,6 @@
   .field-inputs {
     width: 80%;
     justify-self: center;
-  }
-
-  .photo-container {
-    justify-self: center;
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 8px;
   }
 
   .photoInput {
