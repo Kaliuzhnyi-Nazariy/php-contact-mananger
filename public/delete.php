@@ -4,8 +4,12 @@ session_start();
 
 session_regenerate_id(true);
 
+require __DIR__ . '/../src/bootstrap.php';  
+
 $pdo = require __DIR__ ."/../src/db.php";
 $uploadsFolder = __DIR__ . "./uploads";
+
+require __DIR__ . '/../src/lib/cloudinary.php';
 
 if(isset($_GET['id'])) {
 
@@ -23,9 +27,13 @@ $contact = $stmt -> fetch(PDO::FETCH_ASSOC);
         $stmt = $pdo->prepare('DELETE FROM contacts WHERE owner_id = :owner_id AND id = :id');
         $isDeleted = $stmt->execute([":owner_id" => $_SESSION['user_id'], ':id' => $contact['id']]);
 
-        if ($isDeleted && file_exists($contact['photo'])) {
-            unlink($contact['photo']);
+        if($_GET['photo']) {
+            deleteImage($_GET['photo']);
         }
+
+        // if ($isDeleted && file_exists($contact['photo'])) {
+        //     unlink($contact['photo']);
+        // }
 
         header('Location: /');
         exit;
