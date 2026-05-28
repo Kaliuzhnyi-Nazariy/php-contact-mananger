@@ -1,7 +1,7 @@
 <?php
 use Cloudinary\Configuration\Configuration;
 
-$cloudinary = $_ENV["CLOUDINARY_LINK"];
+$cloudinary = $_ENV['CLOUDINARY_LINK'] ?? $_SERVER['CLOUDINARY_LINK'] ?? getenv('CLOUDINARY_LINK');
 
 Configuration::instance($cloudinary);
 
