@@ -48,9 +48,22 @@
     justify-self: center;
   }
 
-  .photoInput {
+  .photo-container {
     justify-self: center;
     height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+  }
+
+  .photoInput {
+    height: 100%;
+    grid-row: 1;
   }
 
   .header {

@@ -29,11 +29,16 @@
         </div>
         </div>
 
-        <label for="photo" class="photoInput">Add photo</label>
+        <div class="photo-container">
+            <label for="photo" class="photoInput">Add photo</label>
         <input type="file" name="photo" id="photo" accept="image/*" hidden>    
-        <!-- <?php if ($_FILES['photo']): ?>
-            <p><?php echo $_FILES['photo']['name'] ?></p>
-            <?php endif; ?> -->
+        <!-- <?php if (isset($_FILES['photo'])): ?>
+            <p>hello</p>
+            <?php echo htmlspecialchars($_FILES['photo']['name']) ?>
+            <?php endif; ?>  -->
+
+            <p id="photo-message">No file selected!</p>
+        </div>
     
         <button type="submit" class="btn addBtn">Add contact</button>
     </form>
@@ -50,3 +55,17 @@
         <?php endif; ?>
 </body>
 </html>
+
+<script>
+    const input = document.getElementById('photo')
+    const inputMessage = document.getElementById('photo-message');
+
+    input.addEventListener('change', () => {
+
+        if(input.files.length > 0) {
+            inputMessage.textContent = input.files[0].name;
+        } else {
+            inputMessage.textContent = 'No file selected!'
+        }
+    })
+</script>
