@@ -2,9 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../');
-
-$dotenv->load();
+Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../')->safeLoad();
 
 session_start();
 
