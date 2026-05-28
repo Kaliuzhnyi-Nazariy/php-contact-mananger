@@ -31,7 +31,8 @@ try {
             name TEXT NOT NULL,
             email TEXT,
             phone TEXT,
-            photo TEXT,
+            photo_link TEXT,
+            photo_public_id TEXT,
             owner_id INTEGER NOT NULL,
             FOREIGN KEY(owner_id) REFERENCES users(id)
         )
