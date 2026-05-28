@@ -33,8 +33,8 @@ This is pet-project to learn PHP. It is basic CRM-project. User should log in an
 ![PC empty](images/image_home_empty_pc.png)
 
 ![Mob with contact](images/image_home_with_contact.png)
-![PC with contact](images/image_home_with_contact.png)
+![PC with contact](images/image_home_with_contact_pc.png)
 
 ### Add marker modal
-![Mob add contact](images/image_add_contact_.png)
+![Mob add contact](images/image_add_contact.png)
 ![PC add contact](images/image_add_contact_pc.png)
