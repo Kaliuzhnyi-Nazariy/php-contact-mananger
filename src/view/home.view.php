@@ -32,8 +32,8 @@
                     <?php foreach ($contacts as $contact) : ?>
                         <li class="listItem">
                             <div class="listItemContent">
-                                <?php if (!empty($contact['photo'])): ?>
-    <img                   src="<?= htmlspecialchars($contact['photo']) ?>">
+                                <?php if (!empty($contact['photo_link'])): ?>
+    <img                   src="<?= htmlspecialchars($contact['photo_link']) ?>">
 <?php endif; ?>
                                 <div>
                                     <h3 class="name">Name: <?php echo $contact['name'] ;?></h3>
@@ -41,7 +41,7 @@
                                     <p class="info">Phone: <?php echo $contact['phone'] ;?></p>
                                 </div>
                             </div>
-                            <a href="delete.php?id=<?php echo $contact['id']; ?>" class="deleteBtn">X</a>
+                            <a href="delete.php?id=<?php echo $contact['id']; ?>&photo=<?php echo urlencode($contact['photo_public_id']); ?>" class="deleteBtn">X</a>
             </li>
             <?php endforeach; ?>
         </ul>
