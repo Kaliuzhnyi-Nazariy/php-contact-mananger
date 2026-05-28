@@ -35,6 +35,6 @@ This is pet-project to learn PHP. It is basic CRM-project. User should log in an
 ![Mob with contact](images/image_home_with_contact.png)
 ![PC with contact](images/image_home_with_contact_pc.png)
 
-### Add marker modal
+### Add contact
 ![Mob add contact](images/image_add_contact.png)
 ![PC add contact](images/image_add_contact_pc.png)
