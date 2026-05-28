@@ -15,5 +15,17 @@ function uploadImage(mixed $file) {
         'public_id' => 'contact_' . $file['name'] . '_' .time()
     ]);
 
-    return $res['secure_url'];
+    return [
+        'link' => $res['secure_url'],
+        'id'=> $res['public_id'],
+    ];
+}
+
+function deleteImage(string $public_id)
+{
+    $upload = new UploadApi();
+
+    $upload->destroy($public_id);
+
+    return;
 }
